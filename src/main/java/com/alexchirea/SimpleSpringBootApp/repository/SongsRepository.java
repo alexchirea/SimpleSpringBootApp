@@ -22,4 +22,8 @@ public class SongsRepository {
         return songs.stream().filter(song -> song.getReleaseYear() == iYear).collect(Collectors.toList());
     }
 
+    public List<Song> getAllByYearGreaterThan(int iYear) {
+        return songs.stream().filter(song -> song.getReleaseYear() > iYear).collect(Collectors.toList());
+    }
+
 }
