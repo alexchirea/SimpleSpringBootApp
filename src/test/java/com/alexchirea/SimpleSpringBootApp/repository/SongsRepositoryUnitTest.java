@@ -35,12 +35,10 @@ class SongsRepositoryUnitTest {
         // act
         List<Song> songs1978 = songsRepository.getAllByYear(1978);
         List<Song> songs1977 = songsRepository.getAllByYear(1977);
-        List<Song> songs2020 = songsRepository.getAllByYear(2020);
 
         // assert
         assertThat(songs1977.size()).isEqualTo(1);
         assertThat(songs1978.size()).isEqualTo(2);
-        assertThat(songs2020.size()).isEqualTo(0);
     }
 
 }
