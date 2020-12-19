@@ -40,6 +40,7 @@ class SongsRepositoryUnitTest {
         // assert
         assertThat(songs1977.size()).isEqualTo(1);
         assertThat(songs1978.size()).isEqualTo(2);
+        assertThat(songs2020.size()).isEqualTo(0);
     }
 
 }
