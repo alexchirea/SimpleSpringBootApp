@@ -1,5 +1,7 @@
 package com.alexchirea.SimpleSpringBootApp.model;
 
+import com.alexchirea.SimpleSpringBootApp.constraint.CustomGoogleEmailConstraint;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,12 +15,12 @@ public class Person {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
 
-    @NotEmpty
-    @Size(min = 5)
+    @NotEmpty(message = "The Full Name can't be null")
+    @Size(min = 5, message = "{Size.Person.FullName}")
     private String fullName;
 
     @NotEmpty
-    @Email
+    @CustomGoogleEmailConstraint
     private String email;
 
     @NotNull
